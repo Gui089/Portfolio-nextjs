@@ -14,7 +14,7 @@ export const Banner = () => {
             <img 
                 width={700} 
                 height={700} 
-                src="/img/Banner-portfolio.png" 
+                src="/img/Banner2.png" 
                 alt="logo dev" 
             />
         </div>

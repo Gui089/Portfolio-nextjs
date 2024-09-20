@@ -1,11 +1,13 @@
 'use client';
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import {Squash as Hamburger} from 'hamburger-react';
 
 
 export const NavBar = () => {
 
     const [activeLink, setActiveLink] = useState('/');
+    const [isOpen, setIsOpen] = useState(false);
 
     const pathname = usePathname();
 
@@ -26,7 +28,10 @@ export const NavBar = () => {
     }, [pathname]);
 
     return (
-        <div className="flex p-7 items-center justify-between">
+        <>
+           <div 
+            style={{background: 'var(--background)'}} 
+            className=" w-full sm:flex hidden fixed p-7 items-center justify-between">
 
             <h1 className="text-xl font-semibold text-white">Guilherme 
                 <span className="ml-2 text-xl font-normal text-gray-400">Coutinho</span>
@@ -52,7 +57,31 @@ export const NavBar = () => {
                     </li>
                 )}</ul>
             </div>
-
         </div>
+
+        {/** menu mobile */}
+        <div 
+            style={{background:'var(--background)'}} 
+            className="w-full p-5 sm:hidden flex flex-col fixed items-center">
+            <div className="flex items-center gap-[100px] ">
+                <h1 className="text-xl font-semibold text-white">Guilherme Coutinho</h1>
+                <Hamburger color="var(--primaryGreen)" toggled={isOpen} toggle={setIsOpen}  />
+            </div>
+        
+        {isOpen && <ul className="text-white flex flex-col gap-4 font-semibold">
+            {navMenu.map(item => 
+                <li 
+                    className={`cursor-pointer gap-2 flex ${activeLink === item.link ? 'text-[#5de4a1]' : ''}`}
+                    key={item.id}>
+                    {activeLink === item.link ? <p>{"<"}</p> : ''}
+                        {item.title}
+                    {activeLink === item.link ? <p>{">"}</p> : ''}
+                </li>
+            )}
+        </ul>}
+        
+
+    </div>
+    </>
     )
 }
