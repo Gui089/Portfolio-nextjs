@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { CardProject } from './Components/CardProject';
+import Link from 'next/link';
 
 
 const Projects = () => {
@@ -13,6 +14,12 @@ const Projects = () => {
 
     const projects = [
         {id:1, title:'Viajou-Anotou',imageUrl: '/img/viajouAnotou.png', linkGit:'https://github.com/Gui089/Viajou-Anotou?tab=readme-ov-file',link:'https://viajou-anotou321.netlify.app/'}
+    ];
+
+    const otherProjects = [
+        {id:1, title:'Me Avalia', imageUrl:'/img/meAvalia.png', linkGit: 'https://github.com/Gui089/Me-Avalia', link: 'https://euphonious-basbousa-219ad7.netlify.app/'},
+        {id:2, title:'Quiz dos Games', imageUrl:'/img/QuizDosGames.png', linkGit: 'https://github.com/Gui089/QuizGames', link: 'https://amazing-custard-bce79d.netlify.app/'},
+        {id:3, title:'Dev Freela(Em Produção)', imageUrl:'https://tse3.mm.bing.net/th?id=OIP.JKp6A46ihy5-X_NlcIdvagHaDt&pid=Api&P=0&h=180', linkGit: 'https://github.com/Gui089/Dev-Freela', link: 'https://github.com/Gui089/Dev-Freela'}
     ];
 
     return (
@@ -29,12 +36,28 @@ const Projects = () => {
                         title={item.title} 
                         linkGit={item.linkGit} 
                         imageUrl={item.imageUrl} 
+                        link={item.link}
                     />)}
                     </ul>
+                
+                <Link data-aos="fade-up" href="https://github.com/Gui089" target='__blank'>
+                    <u className='text-[#5de4a1] text-xl font-semibold cursor-pointer'>Mais Projetos</u>
+                </Link>
             </div>
 
-            <div>
-                <h1>Outros projetos</h1>
+            <div className='mt-[100px]'>
+            <ul>
+                    {otherProjects.map(item => 
+                        <li data-aos="fade-up"  key={item.id}>
+                            <CardProject
+                                title={item.title} 
+                                linkGit={item.linkGit} 
+                                imageUrl={item.imageUrl} 
+                                link={item.link}
+                            />
+                        </li>
+                        )}
+                    </ul>
             </div>
 
         </div>
