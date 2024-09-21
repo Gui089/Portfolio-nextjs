@@ -24,7 +24,7 @@ export const Section = () => {
                     {itemsSkills.map(item => 
                         <li 
                             data-aos="fade-up"
-                            className='bg-[#2d2e32] p-5 w-[400px] h-[200px] shadow-md'
+                            className='bg-[#2d2e32] rounded-md p-5 w-[400px] h-[200px] shadow-md'
                             key={item.id}>
                                 <div className='flex justify-between'>
                                     <p 

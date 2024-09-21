@@ -26,7 +26,7 @@ export const Info = () => {
                 </h1>
 
                 <p className='text-gray-400 font-light w-[300px] sm:w-full'>
-                    Atualmente atuo como desenvolvedor full-stack júnio na SinergiaRH, atuo na criação e manunteção de aplicações com Nextjs/React, NodeJs e .Net
+                    Atualmente atuo como desenvolvedor full-stack júnior na SinergiaRH, atuo na criação e manunteção de aplicações com Nextjs/React, NodeJs e .Net
                 </p>
             </div>
 

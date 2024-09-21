@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {Squash as Hamburger} from 'hamburger-react';
+import Link from "next/link";
 
 
 export const NavBar = () => {
@@ -39,13 +40,15 @@ export const NavBar = () => {
 
             <div>
                 <ul className="text-white flex gap-7 font-semibold">{navMenu.map(item => 
+                    <Link href={item.link} key={item.id}>
                     <li 
                     className={`cursor-pointer gap-2 flex ${activeLink === item.link ? 'text-[#5de4a1]' : ''}`}
-                    key={item.id}>
+                    >
                         {activeLink === item.link ? <p>{"<"}</p> : ''}
                             {item.title}
                         {activeLink === item.link ? <p>{">"}</p> : ''}
                     </li>
+                    </Link>
                 )}</ul>
             </div>
 
@@ -69,14 +72,16 @@ export const NavBar = () => {
             </div>
         
         {isOpen && <ul className="text-white flex flex-col gap-4 font-semibold">
-            {navMenu.map(item => 
+            {navMenu.map(item =>
+                <Link href={item.link} key={item.id}>
                 <li 
                     className={`cursor-pointer gap-2 flex ${activeLink === item.link ? 'text-[#5de4a1]' : ''}`}
-                    key={item.id}>
+                    >
                     {activeLink === item.link ? <p>{"<"}</p> : ''}
                         {item.title}
                     {activeLink === item.link ? <p>{">"}</p> : ''}
                 </li>
+                </Link>
             )}
         </ul>}
         
