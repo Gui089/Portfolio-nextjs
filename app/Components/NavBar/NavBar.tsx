@@ -32,7 +32,7 @@ export const NavBar = () => {
         <>
            <div 
             style={{background: 'var(--background)'}} 
-            className=" w-full sm:flex hidden fixed p-7 items-center justify-between">
+            className=" w-full sm:flex hidden fixed p-7 items-center justify-between top-0">
 
             <h1 className="text-xl font-semibold text-white">Guilherme 
                 <span className="ml-2 text-xl font-normal text-gray-400">Coutinho</span>
@@ -65,7 +65,7 @@ export const NavBar = () => {
         {/** menu mobile */}
         <div 
             style={{background:'var(--background)'}} 
-            className="w-full p-5 sm:hidden flex flex-col fixed items-center">
+            className="w-full p-5 sm:hidden bg-[#2d2e32] flex flex-col fixed items-center top-0">
             <div className="flex items-center gap-[100px] ">
                 <h1 className="text-xl font-semibold text-white">Guilherme Coutinho</h1>
                 <Hamburger color="var(--primaryGreen)" toggled={isOpen} toggle={setIsOpen}  />

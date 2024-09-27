@@ -17,14 +17,14 @@ export const Section = () => {
     }, []);
 
     return (
-        <div className="w-full flex h-[800px] bg-[#25262a] justify-around items-center">
+        <div className="w-full flex sm:flex-row flex-col h-[800px] bg-[#25262a] justify-around items-center">
             
-            <div className='mt-[70px] ml-9'>
+            <div className='mt-[70px] sm:ml-9'>
                 <ul className='flex flex-col gap-4'>
                     {itemsSkills.map(item => 
                         <li 
                             data-aos="fade-up"
-                            className='bg-[#2d2e32] rounded-md p-5 w-[400px] h-[200px] shadow-md'
+                            className='bg-[#2d2e32] rounded-md p-5 w-[370px] sm:w-[400px] h-[200px] shadow-md'
                             key={item.id}>
                                 <div className='flex justify-between'>
                                     <p 
@@ -44,7 +44,7 @@ export const Section = () => {
                 </ul>
             </div>
 
-            <div data-aos="fade-up" className='w-[350px]' >
+            <div data-aos="fade-up" className='w-[350px] sm:mt-0 sm:py-0 mt-[100px] py-[50px]' >
                 <h1 className='text-gray-400'>Introdução</h1>
 
                 <div data-aos="fade-right" className='mt-5'>

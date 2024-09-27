@@ -23,7 +23,7 @@ const Projects = () => {
     ];
 
     return (
-        <div className="w-full h-[800px] absolute mt-[85px] flex justify-around">
+        <div className="flex-col sm:flex-row items-center sm:items-start w-full h-[800px]  mt-[85px] flex justify-around">
             
             <div data-aos="fade-up" className="w-[350px]">
                 <h1 className="text-white text-3xl mt-[100px]">Meus Projetos</h1>
