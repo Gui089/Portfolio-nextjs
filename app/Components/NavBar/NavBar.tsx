@@ -20,8 +20,8 @@ export const NavBar = () => {
     ];
 
     const socialMenu = [
-        {id:1, title: 'GitHub', link: '', imageUrl: '/img/social.png'},
-        {id:2, title: 'LinkedIn', link: '', imageUrl: '/img/linkedin (2).png'},
+        {id:1, title: 'GitHub', link: 'https://github.com/Gui089?tab=overview&from=2024-10-01&to=2024-10-05', imageUrl: '/img/social.png'},
+        {id:2, title: 'LinkedIn', link: 'https://www.linkedin.com/in/guilherme-coutinho-silva-95216a240/', imageUrl: '/img/linkedin (2).png'},
     ];
 
     useEffect(() => {
@@ -53,11 +53,14 @@ export const NavBar = () => {
             </div>
 
             <div>
-                <ul className="text-gray-400 font-thin flex gap-7">{socialMenu.map(item => 
+                <ul className="text-gray-400 font-thin flex gap-7">
+                    {socialMenu.map(item => 
+                    <Link href={item.link} target="__blank">
                     <li className="flex cursor-pointer items-center" key={item.id}>
                         <img width={25} height={25} src={item.imageUrl} alt="Logo social media" />
                         {item.title}
                     </li>
+                    </Link>
                 )}</ul>
             </div>
         </div>
