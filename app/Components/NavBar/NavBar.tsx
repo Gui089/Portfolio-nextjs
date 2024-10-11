@@ -16,7 +16,6 @@ export const NavBar = () => {
         {id:1,title: 'Home', link:'/'},
         {id:2, title:'Projetos', link: '/projetos'},
         {id:3, title:'Experiência', link: '/experiencia'},
-        {id:4, title:'Contato', link: '/contato'}
     ];
 
     const socialMenu = [
@@ -30,7 +29,7 @@ export const NavBar = () => {
 
     return (
         <>
-           <div 
+        <div 
             style={{background: 'var(--background)'}} 
             className=" w-full sm:flex hidden fixed p-7 items-center justify-between top-0">
 
